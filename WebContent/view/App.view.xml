@@ -2,10 +2,7 @@
 		 xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 	   <pages>
-	       <!-- <Page>
-	          <Button text="Save"/>
-	       </Page> -->
-	      <mvc:XMLView viewName="smax.etag.PRODUCT.view.ProductList"/>
+	       	    <mvc:XMLView viewName="smax.etag.PRODUCT.view.ProductList"/>
 	   </pages>	
 	</App>
 </core:View>

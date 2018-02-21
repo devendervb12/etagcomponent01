@@ -1,8 +1,20 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
-		 xmlns:html="http://www.w3.org/1999/xhtml">
+		controllerName="smax.etag.PRODUCT.controller.ProductList" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="ProductList">
+		<subHeader>
+			<Toolbar>
+				<SearchField
+					liveChange="onSearch"
+					width="50%" />
+			</Toolbar>
+		</subHeader>
 		<content>
-	
+	       <List items="{/ProductSet}" 	growing="true"
+		growingThreshold="4" id="idList">
+	         <items>
+	            <StandardListItem title="{ProductID}" description="{Name}"/>
+	         </items>
+	       </List>
 		</content>
 	</Page>
 </core:View>
