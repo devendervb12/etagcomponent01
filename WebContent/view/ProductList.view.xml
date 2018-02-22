@@ -1,4 +1,5 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		xmlns:form="sap.ui.layout.form"
 		controllerName="smax.etag.PRODUCT.controller.ProductList" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="ProductList">
 		<subHeader>
@@ -12,9 +13,37 @@
 	       <List items="{/ProductSet}" 	growing="true"
 		growingThreshold="4" id="idList">
 	         <items>
-	            <StandardListItem title="{ProductID}" description="{Name}"/>
+	            <StandardListItem title="{ProductID}" description="{Name}" press="onItemPress"
+	            type="Active" />
 	         </items>
 	       </List>
+	       	       
+	       <form:SimpleForm visible="false" id="idSf">
+	          <form:title>
+	                <core:Title text="Product Details"/>
+	          </form:title>
+	          	          
+	          <form:content>
+	               <Label text="Product ID"/>
+	               <Text text="{ProductID}"/>
+	                <Label text="Name"/>
+	               <Text text="{Name}"/>
+	                <Label text="Category"/>
+	               <Text text="{Category}"/>
+	                <Label text="Description"/>
+	               <Text text="{Description}"/>
+	          
+	          </form:content>
+	          
+	       </form:SimpleForm>
 		</content>
+		<footer>
+		    <Bar>
+		       <contentRight>
+		             <Button text="Create" press="onCreate"/>
+		             <Button text="Update" press="onUpdate"/>
+		       </contentRight>
+		    </Bar>
+		</footer>
 	</Page>
 </core:View>
